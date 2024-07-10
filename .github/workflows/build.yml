@@ -45,11 +45,11 @@ jobs:
 
       - name: Build
         run: |
-          cd alist-web
-          pnpm install
-          pnpm i18n:build
-          pnpm build
-          cd ..
+              cd alist-web
+              pnpm install
+              pnpm i18n:build
+              pnpm build
+              cd ..
 
       - name: Upload dist files
         uses: ad-m/github-push-action@master
@@ -57,5 +57,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
           directory: web-dist
-          repository: alist-org/web-dist
+          repository: Happy-clo/alist-web
           force: true
