@@ -18,7 +18,7 @@ jobs:
       - name: Generate changelog
         run: npx changelogithub # or changelogithub@0.12 if ensure the stable result
         env:
-          GITHUB_TOKEN: ${{secrets.MY_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   release:
     needs: changelog

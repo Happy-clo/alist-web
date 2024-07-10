@@ -13,15 +13,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2.4.0
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          npm install -g pnpm
+          pnpm install
+
 
       - name: Format
         run: pnpm run format
