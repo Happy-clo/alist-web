@@ -21,15 +21,10 @@ jobs:
 
       - name: Clean cache
         run: |
-           npm cache clean --force
-           npm config get registry
-    
-      - uses: pnpm/action-setup@v2.4.0
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 8.3.1
-          run_install: false
+             npm cache clean --force
+             pnpm cache clean
+             npm config get registry
+             npm install -g pnpm
 
       - name: Checkout
         uses: actions/checkout@v4
