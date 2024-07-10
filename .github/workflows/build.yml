@@ -21,8 +21,8 @@ jobs:
 
       - name: Clean cache
         run: |
+             npm install -g pnpm
              npm cache clean --force
-             pnpm cache clean
              npm config get registry
 
       - name: Checkout
