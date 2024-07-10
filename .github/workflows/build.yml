@@ -24,7 +24,6 @@ jobs:
              npm cache clean --force
              pnpm cache clean
              npm config get registry
-             npm install -g pnpm
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,6 +46,7 @@ jobs:
       - name: Build
         run: |
               cd alist-web
+              npm install -g pnpm
               pnpm install
               pnpm i18n:build
               pnpm build
