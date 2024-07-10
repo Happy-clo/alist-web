@@ -20,7 +20,9 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
 
       - name: Clean cache
-        run: npm cache clean --force
+        run: |
+           npm cache clean --force
+           npm config get registry
     
       - uses: pnpm/action-setup@v2.4.0
         name: Install pnpm
